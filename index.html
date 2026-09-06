@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Part 1: Page structure -->
+    <header id="main-header">
+        <h1>My Budget Tracker</h1>
+        <p class="subtitle">Track your income and expenses in one place.</p>
+    </header>
+
+    <main class="container">
+        <!-- Part 2: The "Add Expense" section -->
+        <section id="add-expense-section" class="card">
+            <h2>Add Expense</h2>
+            <form class="expense-form">
+                <div class="form-group">
+                    <label for="expense-name">Expense Name:</label>
+                    <input type="text" id="expense-name" placeholder="e.g. Groceries">
+                </div>
+
+                <div class="form-group">
+                    <label for="expense-amount">Amount ($):</label>
+                    <input type="number" id="expense-amount" placeholder="e.g. 50">
+                </div>
+
+                <div class="form-group">
+                    <label for="expense-category">Category:</label>
+                    <input type="text" id="expense-category" placeholder="e.g. Food">
+                </div>
+            </form>
+        </section>
+
+        <!-- Part 3: The "Your Expenses" placeholder -->
+        <section id="your-expenses-section" class="card">
+            <h2>Your Expenses</h2>
+            <p class="placeholder-text">No expenses yet</p>
+        </section>
+    </main>
+
+</body>
+</html>
