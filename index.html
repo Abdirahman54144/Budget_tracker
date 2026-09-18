@@ -3,44 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Budget Tracker</title>
+    <title>Budget Tracker - Week 2</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Part 1: Page structure -->
-    <header id="main-header">
+    <!-- Header Section with Logo -->
+    <header>
+        <img src="https://cdn-icons-png.flaticon.com/512/2382/2382533.png" alt="Budget Tracker Logo" width="50" class="logo">
         <h1>My Budget Tracker</h1>
-        <p class="subtitle">Track your income and expenses in one place.</p>
     </header>
 
     <main class="container">
-        <!-- Part 2: The "Add Expense" section -->
-        <section id="add-expense-section" class="card">
-            <h2>Add Expense</h2>
-            <form class="expense-form">
+
+        <!-- Interactive Collapsible Help Section -->
+        <section class="help-section">
+            <details>
+                <summary>How to use this tracker?</summary>
+                <p>Fill in the expense name, amount, category, and date below, then click "Add Expense" to record your spending.</p>
+            </details>
+        </section>
+
+        <!-- Upgraded Expense Form -->
+        <section class="add-expense-section">
+            <h2>Add New Expense</h2>
+            <form id="expense-form">
                 <div class="form-group">
                     <label for="expense-name">Expense Name:</label>
-                    <input type="text" id="expense-name" placeholder="e.g. Groceries">
+                    <input type="text" id="expense-name" placeholder="e.g., Grocery Shopping" required>
                 </div>
 
                 <div class="form-group">
                     <label for="expense-amount">Amount ($):</label>
-                    <input type="number" id="expense-amount" placeholder="e.g. 50">
+                    <input type="number" id="expense-amount" placeholder="e.g., 50" required>
                 </div>
 
                 <div class="form-group">
                     <label for="expense-category">Category:</label>
-                    <input type="text" id="expense-category" placeholder="e.g. Food">
+                    <select id="expense-category" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Rent">Rent</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
+
+                <div class="form-group">
+                    <label for="expense-date">Date:</label>
+                    <input type="date" id="expense-date" required>
+                </div>
+
+                <button type="button" id="add-btn">Add Expense</button>
             </form>
         </section>
 
-        <!-- Part 3: The "Your Expenses" placeholder -->
-        <section id="your-expenses-section" class="card">
-            <h2>Your Expenses</h2>
-            <p class="placeholder-text">No expenses yet</p>
+        <!-- Structured Expense Table -->
+        <section class="expenses-section">
+            <h2>Expense Records</h2>
+            <table class="expense-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount ($)</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunch at Restaurant</td>
+                        <td>15.00</td>
+                        <td>Food</td>
+                        <td>2026-09-10</td>
+                    </tr>
+                    <tr>
+                        <td>Bus Fare</td>
+                        <td>5.00</td>
+                        <td>Transport</td>
+                        <td>2026-09-11</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly Rent</td>
+                        <td>400.00</td>
+                        <td>Rent</td>
+                        <td>2026-09-12</td>
+                    </tr>
+                    <tr>
+                        <td>Movie Ticket</td>
+                        <td>12.00</td>
+                        <td>Entertainment</td>
+                        <td>2026-09-13</td>
+                    </tr>
+                    <tr>
+                        <td>Internet Bill</td>
+                        <td>30.00</td>
+                        <td>Other</td>
+                        <td>2026-09-14</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
+
+        <!-- Multimedia YouTube Embed Section -->
+        <section class="video-section">
+            <h2>Budgeting Tips Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/sVKQn2I4HDM" title="Budgeting Tips" frameborder="0" allowfullscreen></iframe>
+        </section>
+
     </main>
 
 </body>

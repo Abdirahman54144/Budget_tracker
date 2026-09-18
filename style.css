@@ -1,75 +1,121 @@
-/* Element Selectors */
+/* General Layout Settings */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
+    background-color: #f4f7f6;
     margin: 0;
     padding: 20px;
     color: #333;
 }
 
-h1 {
-    color: #2c3e50;
-    margin-bottom: 5px;
+header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-h2 {
-    color: #2980b9;
-    margin-top: 0;
-}
-
-/* ID Selectors */
-#main-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-#add-expense-section {
-    background-color: #ffffff;
-    border-left: 5px solid #27ae60;
-}
-
-#your-expenses-section {
-    background-color: #ffffff;
-    border-left: 5px solid #e74c3c;
-}
-
-/* Class Selectors */
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-}
-
-.subtitle {
-    color: #7f8c8d;
-    font-size: 1.1rem;
-}
-
-.card {
+    background: #fff;
     padding: 20px;
     border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .form-group {
     margin-bottom: 15px;
 }
 
-.form-group label {
+label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* 1. Direct Child Selector */
+.add-expense-section > form {
+    display: grid;
+    gap: 10px;
 }
 
-.placeholder-text {
-    font-style: italic;
-    color: #95a5a6;
+/* 2. Negation Pseudo-class & Focus State */
+input:not([type="button"]), select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Pointer on hover requirement */
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Table Styling */
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+/* 3. Descendant Selector */
+.expenses-section td, .expenses-section th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.expense-table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 4. Pseudo-class based on position (nth-child) */
+.expense-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Row Hover Effect */
+.expense-table tbody tr:hover {
+    background-color: #e2e8f0;
+}
+
+/* Collapsible and Video Sections */
+details {
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.video-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+iframe {
+    max-width: 100%;
+    border-radius: 8px;
 }
