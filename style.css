@@ -1,121 +1,196 @@
-/* General Layout Settings */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
+/* ==========================================
+   1. COLOR PALETTE & VARIABLES
+   ========================================== */
+:root {
+    --primary-color: #2b6cb0;     /* Deep Professional Blue */
+    --primary-hover: #2c5282;     /* Darker Blue */
+    --accent-color: #319795;      /* Teal Accent */
+    --bg-color: #f7fafc;          /* Soft Gray Background */
+    --card-bg: #ffffff;           /* Clean White Card Background */
+    --text-primary: #2d3748;      /* Slate Text */
+    --text-muted: #718096;        /* Muted Gray Text */
+    --border-color: #e2e8f0;      /* Subtle Light Border */
+    --table-header-bg: #2b6cb0;   /* Matching Primary Blue Header */
+    --table-alt-row: #f7fafc;     /* Light Gray Alternating Row */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* ==========================================
+   2. TYPOGRAPHY & GLOBAL STYLES
+   ========================================== */
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 20px;
-    color: #333;
+    padding: 0;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+body {
+    font-family: 'Inter', sans-serif; /* Body Font */
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 30px 20px;
 }
 
+/* Headings Typography */
+h1, h2, h3, summary {
+    font-family: 'Poppins', sans-serif; /* Heading Font */
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   3. CSS BOX MODEL & CARD LAYOUTS
+   ========================================== */
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between cards */
 }
 
+/* Distinct Visual Cards */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px; /* Rounded corners */
+    padding: 24px;       /* Proper internal spacing */
+    box-shadow: var(--shadow-sm);
+}
+
+header.card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* ==========================================
+   4. FORM & BUTTON STYLING
+   ========================================== */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: var(--text-primary);
 }
 
-/* 1. Direct Child Selector */
-.add-expense-section > form {
-    display: grid;
-    gap: 10px;
-}
-
-/* 2. Negation Pseudo-class & Focus State */
 input:not([type="button"]), select {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 10px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 input:focus, select:focus {
-    border-color: #007bff;
+    border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
 }
 
 button {
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: white;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
     border: none;
-    border-radius: 4px;
-    cursor: pointer; /* Pointer on hover requirement */
-    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: var(--primary-hover);
 }
 
-/* Table Styling */
+/* ==========================================
+   5. TABLE STYLING
+   ========================================== */
 .expense-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
-/* 3. Descendant Selector */
-.expenses-section td, .expenses-section th {
-    border: 1px solid #ddd;
-    padding: 10px;
+.expense-table th, .expense-table td {
+    padding: 12px 16px;
     text-align: left;
+    font-size: 0.95rem;
 }
 
 .expense-table thead {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--table-header-bg);
+    color: #ffffff;
 }
 
-/* 4. Pseudo-class based on position (nth-child) */
+.expense-table th {
+    font-weight: 600;
+}
+
+.expense-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Alternating Row Colors */
 .expense-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: var(--table-alt-row);
 }
 
-/* Row Hover Effect */
+/* Row Hover State */
 .expense-table tbody tr:hover {
-    background-color: #e2e8f0;
+    background-color: #edf2f7;
 }
 
-/* Collapsible and Video Sections */
+/* ==========================================
+   6. INTERACTIVE & MULTIMEDIA ELEMENTS
+   ========================================== */
 details {
-    background: #e9ecef;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
-
-summary {
-    font-weight: bold;
     cursor: pointer;
 }
 
-.video-section {
-    margin-top: 30px;
-    text-align: center;
+summary {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+details p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
 iframe {
-    max-width: 100%;
     border-radius: 8px;
+    border: 1px solid var(--border-color);
 }

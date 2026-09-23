@@ -1,10 +1,10 @@
-# Week 2 Advanced HTML and CSS Assignment - Budget Tracker
+# Week 3 Visual Identity & CSS Design - Budget Tracker
 
-This project is an extension of the Week 1 Budget Tracker application, upgraded with advanced HTML structures and CSS selectors.
+This week's assignment focuses on transforming the Budget Tracker into a polished, visually appealing, and cohesive application using CSS design principles.
 
-## Features Added
-1. Expense Table: Uses structured `<table>`, `<thead>`, `<tbody>`, `<th>`, and `<td>` tags with 5 hardcoded records. Styled with alternating row colors (`nth-child(even)`).
-2. Form Upgrades: Added a dropdown `<select>` with 5 category options (Food, Transport, Rent, Entertainment, Other) wrapped in a `<form>`. All inputs have matching `id` attributes.
-3. Multimedia: Integrated an `<img>` tag for the page logo and an `<iframe>` tag embedding a YouTube video on budgeting tips.
-4. Interactive Elements: Included a collapsible `<details>` and `<summary>` help guide, row hover highlights (`:hover`), and a pointer cursor on the action button.
-5. Advanced CSS Selectors: Utilized descendant selectors, direct child selectors, negation pseudo-classes (`:not()`), and input focus states.
+## Enhancements Applied
+
+1. Intentional Color Palette: Applied a cohesive color scheme using CSS variables (`--primary-color`, `--accent-color`, `--bg-color`).
+2. Typography: Integrated Google Fonts (`Poppins` for headings and `Inter` for body text) to establish visual hierarchy and improve readability.
+3. Card-Based Layout (CSS Box Model)**: Utilized `margin`, `padding`, `border`, and `border-radius` to structure page sections as distinct visual cards.
+4. Enhanced Table & Form: Styled tables with alternating row colors, padding, and styled headers. Upgraded forms with focus states and interactive buttons.

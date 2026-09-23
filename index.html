@@ -3,43 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Tracker - Week 2</title>
+    <title>Budget Tracker week-3</title>
+    
+    <!-- Google Fonts Integration (Poppins for Headings & Inter for Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Section with Logo -->
-    <header>
+    <!-- Header Section -->
+    <header class="card">
         <img src="https://cdn-icons-png.flaticon.com/512/2382/2382533.png" alt="Budget Tracker Logo" width="50" class="logo">
-        <h1>My Budget Tracker</h1>
+        <div>
+            <h1>Personal Budget Tracker</h1>
+            <p class="subtitle">Track your income and expenses effortlessly.</p>
+        </div>
     </header>
 
     <main class="container">
 
-        <!-- Interactive Collapsible Help Section -->
-        <section class="help-section">
+        <!-- Collapsible Help Section -->
+        <section class="card help-section">
             <details>
                 <summary>How to use this tracker?</summary>
-                <p>Fill in the expense name, amount, category, and date below, then click "Add Expense" to record your spending.</p>
+                <p>Fill in the expense details below and click "Add Expense" to save your transaction.</p>
             </details>
         </section>
 
-        <!-- Upgraded Expense Form -->
-        <section class="add-expense-section">
+        <!-- Expense Form Section -->
+        <section class="card add-expense-section">
             <h2>Add New Expense</h2>
             <form id="expense-form">
                 <div class="form-group">
-                    <label for="expense-name">Expense Name:</label>
+                    <label for="expense-name">Expense Name</label>
                     <input type="text" id="expense-name" placeholder="e.g., Grocery Shopping" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="expense-amount">Amount ($):</label>
+                    <label for="expense-amount">Amount ($)</label>
                     <input type="number" id="expense-amount" placeholder="e.g., 50" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="expense-category">Category:</label>
+                    <label for="expense-category">Category</label>
                     <select id="expense-category" required>
                         <option value="">-- Select Category --</option>
                         <option value="Food">Food</option>
@@ -51,7 +60,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="expense-date">Date:</label>
+                    <label for="expense-date">Date</label>
                     <input type="date" id="expense-date" required>
                 </div>
 
@@ -59,8 +68,8 @@
             </form>
         </section>
 
-        <!-- Structured Expense Table -->
-        <section class="expenses-section">
+        <!-- Expense Records Table Section -->
+        <section class="card expenses-section">
             <h2>Expense Records</h2>
             <table class="expense-table">
                 <thead>
@@ -106,10 +115,10 @@
             </table>
         </section>
 
-        <!-- Multimedia YouTube Embed Section -->
-        <section class="video-section">
-            <h2>Budgeting Tips Video</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/sVKQn2I4HDM" title="Budgeting Tips" frameborder="0" allowfullscreen></iframe>
+        <!-- Multimedia Section -->
+        <section class="card video-section">
+            <h2>Budgeting Tips</h2>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/sVKQn2I4HDM" title="Budgeting Tips" frameborder="0" allowfullscreen></iframe>
         </section>
 
     </main>
