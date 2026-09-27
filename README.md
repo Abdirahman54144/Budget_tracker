@@ -1,10 +1,11 @@
-# Week 3 Visual Identity & CSS Design - Budget Tracker
+# SpendWise Dashboard Shell
 
-This week's assignment focuses on transforming the Budget Tracker into a polished, visually appealing, and cohesive application using CSS design principles.
+A responsive dashboard user interface built for the SpendWise application using modern CSS techniques.
 
-## Enhancements Applied
-
-1. Intentional Color Palette: Applied a cohesive color scheme using CSS variables (`--primary-color`, `--accent-color`, `--bg-color`).
-2. Typography: Integrated Google Fonts (`Poppins` for headings and `Inter` for body text) to establish visual hierarchy and improve readability.
-3. Card-Based Layout (CSS Box Model)**: Utilized `margin`, `padding`, `border`, and `border-radius` to structure page sections as distinct visual cards.
-4. Enhanced Table & Form: Styled tables with alternating row colors, padding, and styled headers. Upgraded forms with focus states and interactive buttons.
+## Features Implemented
+- CSS Grid: Applied to build the multi-column overall page structure and dashboard card layouts.
+- Flexbox: Utilized for positioning internal elements within the header, sidebar, and dashboard cards.
+- CSS Custom Properties (`:root`): Configured brand colors, background themes, and typography colors centrally.
+- Responsive Layout: Automatically switches to a single-column view on screens smaller than 768px.
+- Micro-interactions: Applied subtle 200ms transform and shadow animations on card hover and keyboard focus states.
+- Dark Mode Support: Included automatic theme switching based on system preferences (`prefers-color-scheme: dark`).

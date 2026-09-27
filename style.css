@@ -1,196 +1,168 @@
-/* ==========================================
-   1. COLOR PALETTE & VARIABLES
-   ========================================== */
+/* 3. Theme using CSS Custom Properties (:root) */
 :root {
-    --primary-color: #2b6cb0;     /* Deep Professional Blue */
-    --primary-hover: #2c5282;     /* Darker Blue */
-    --accent-color: #319795;      /* Teal Accent */
-    --bg-color: #f7fafc;          /* Soft Gray Background */
-    --card-bg: #ffffff;           /* Clean White Card Background */
-    --text-primary: #2d3748;      /* Slate Text */
-    --text-muted: #718096;        /* Muted Gray Text */
-    --border-color: #e2e8f0;      /* Subtle Light Border */
-    --table-header-bg: #2b6cb0;   /* Matching Primary Blue Header */
-    --table-alt-row: #f7fafc;     /* Light Gray Alternating Row */
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --brand-color: #0d9488;
+    --accent-color: #0284c7;
+    --bg-color: #f8fafc;
+    --surface-color: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* ==========================================
-   2. TYPOGRAPHY & GLOBAL STYLES
-   ========================================== */
+/* Base Reset */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif; /* Body Font */
     background-color: var(--bg-color);
     color: var(--text-primary);
-    line-height: 1.6;
-    padding: 30px 20px;
 }
 
-/* Headings Typography */
-h1, h2, h3, summary {
-    font-family: 'Poppins', sans-serif; /* Heading Font */
-    color: var(--primary-color);
-    margin-bottom: 15px;
+/* 2. Page Layout using CSS Grid */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
 }
 
-h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
+/* Sidebar Styling using Flexbox */
+.sidebar {
+    background-color: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-h2 {
-    font-size: 1.3rem;
-    font-weight: 600;
+.logo h2 {
+    color: var(--brand-color);
 }
 
-.subtitle {
-    color: var(--text-muted);
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.nav-item.active, .nav-item:hover {
+    background-color: var(--brand-color);
+    color: #ffffff;
+}
+
+/* Main Content & Header Flexbox Layout */
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: var(--surface-color);
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Cards Grid Layout */
+.cards-grid {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Dashboard Cards Flexbox Structure */
+.card {
+    background-color: var(--surface-color);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* 5. Micro-interactions Animation (250ms or less) */
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.card h3 {
+    color: var(--text-secondary);
     font-size: 0.95rem;
 }
 
-/* ==========================================
-   3. CSS BOX MODEL & CARD LAYOUTS
-   ========================================== */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Spacing between cards */
-}
-
-/* Distinct Visual Cards */
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px; /* Rounded corners */
-    padding: 24px;       /* Proper internal spacing */
-    box-shadow: var(--shadow-sm);
-}
-
-header.card {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-}
-
-/* ==========================================
-   4. FORM & BUTTON STYLING
-   ========================================== */
-.form-group {
-    margin-bottom: 18px;
-}
-
-label {
-    display: block;
-    font-weight: 500;
-    font-size: 0.9rem;
-    margin-bottom: 6px;
+.card .amount {
+    font-size: 1.6rem;
+    font-weight: bold;
     color: var(--text-primary);
 }
 
-input:not([type="button"]), select {
-    width: 100%;
-    padding: 10px 14px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background-color: #fff;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+.card .status {
+    font-size: 0.8rem;
+    color: var(--brand-color);
 }
 
-input:focus, select:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
+/* 5. Hover and Keyboard Focus Micro-interactions */
+.card:hover, .card:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--brand-color);
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+/* 4. Responsive Design (Single-column layout below 768px) */
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
 }
 
-button:hover {
-    background-color: var(--primary-hover);
-}
-
-/* ==========================================
-   5. TABLE STYLING
-   ========================================== */
-.expense-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.expense-table th, .expense-table td {
-    padding: 12px 16px;
-    text-align: left;
-    font-size: 0.95rem;
-}
-
-.expense-table thead {
-    background-color: var(--table-header-bg);
-    color: #ffffff;
-}
-
-.expense-table th {
-    font-weight: 600;
-}
-
-.expense-table tbody tr {
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* Alternating Row Colors */
-.expense-table tbody tr:nth-child(even) {
-    background-color: var(--table-alt-row);
-}
-
-/* Row Hover State */
-.expense-table tbody tr:hover {
-    background-color: #edf2f7;
-}
-
-/* ==========================================
-   6. INTERACTIVE & MULTIMEDIA ELEMENTS
-   ========================================== */
-details {
-    cursor: pointer;
-}
-
-summary {
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-details p {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-iframe {
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+/* Stretch Goal: Dark Theme (prefers-color-scheme: dark) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #0f172a;
+        --surface-color: #1e293b;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --border-color: #334155;
+        --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    }
 }

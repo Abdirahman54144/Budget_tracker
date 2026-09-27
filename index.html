@@ -3,125 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Tracker week-3</title>
-    
-    <!-- Google Fonts Integration (Poppins for Headings & Inter for Body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    
+    <title>SpendWise Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/2382/2382533.png" alt="Budget Tracker Logo" width="50" class="logo">
-        <div>
-            <h1>Personal Budget Tracker</h1>
-            <p class="subtitle">Track your income and expenses effortlessly.</p>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SpendWise</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">Dashboard</a>
+                <a href="#" class="nav-item">Analytics</a>
+                <a href="#" class="nav-item">Expenses</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Overview</h1>
+                <div class="user-profile">
+                    <span>Abdirahman</span>
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Cards Grid (At least 6 category cards) -->
+            <main class="cards-grid">
+                <div class="card" tabindex="0">
+                    <h3>Food</h3>
+                    <p class="amount">$450.00</p>
+                    <span class="status">Monthly Budget</span>
+                </div>
+
+                <div class="card" tabindex="0">
+                    <h3>Transport</h3>
+                    <p class="amount">$180.00</p>
+                    <span class="status">Monthly Budget</span>
+                </div>
+
+                <div class="card" tabindex="0">
+                    <h3>Rent</h3>
+                    <p class="amount">$1,200.00</p>
+                    <span class="status">Fixed Cost</span>
+                </div>
+
+                <div class="card" tabindex="0">
+                    <h3>Entertainment</h3>
+                    <p class="amount">$150.00</p>
+                    <span class="status">Leisure</span>
+                </div>
+
+                <div class="card" tabindex="0">
+                    <h3>Savings</h3>
+                    <p class="amount">$600.00</p>
+                    <span class="status">Target Saved</span>
+                </div>
+
+                <div class="card" tabindex="0">
+                    <h3>Utilities</h3>
+                    <p class="amount">$210.00</p>
+                    <span class="status">Bills Paid</span>
+                </div>
+            </main>
         </div>
-    </header>
-
-    <main class="container">
-
-        <!-- Collapsible Help Section -->
-        <section class="card help-section">
-            <details>
-                <summary>How to use this tracker?</summary>
-                <p>Fill in the expense details below and click "Add Expense" to save your transaction.</p>
-            </details>
-        </section>
-
-        <!-- Expense Form Section -->
-        <section class="card add-expense-section">
-            <h2>Add New Expense</h2>
-            <form id="expense-form">
-                <div class="form-group">
-                    <label for="expense-name">Expense Name</label>
-                    <input type="text" id="expense-name" placeholder="e.g., Grocery Shopping" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="expense-amount">Amount ($)</label>
-                    <input type="number" id="expense-amount" placeholder="e.g., 50" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="expense-category">Category</label>
-                    <select id="expense-category" required>
-                        <option value="">-- Select Category --</option>
-                        <option value="Food">Food</option>
-                        <option value="Transport">Transport</option>
-                        <option value="Rent">Rent</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="expense-date">Date</label>
-                    <input type="date" id="expense-date" required>
-                </div>
-
-                <button type="button" id="add-btn">Add Expense</button>
-            </form>
-        </section>
-
-        <!-- Expense Records Table Section -->
-        <section class="card expenses-section">
-            <h2>Expense Records</h2>
-            <table class="expense-table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Amount ($)</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lunch at Restaurant</td>
-                        <td>15.00</td>
-                        <td>Food</td>
-                        <td>2026-09-10</td>
-                    </tr>
-                    <tr>
-                        <td>Bus Fare</td>
-                        <td>5.00</td>
-                        <td>Transport</td>
-                        <td>2026-09-11</td>
-                    </tr>
-                    <tr>
-                        <td>Monthly Rent</td>
-                        <td>400.00</td>
-                        <td>Rent</td>
-                        <td>2026-09-12</td>
-                    </tr>
-                    <tr>
-                        <td>Movie Ticket</td>
-                        <td>12.00</td>
-                        <td>Entertainment</td>
-                        <td>2026-09-13</td>
-                    </tr>
-                    <tr>
-                        <td>Internet Bill</td>
-                        <td>30.00</td>
-                        <td>Other</td>
-                        <td>2026-09-14</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Multimedia Section -->
-        <section class="card video-section">
-            <h2>Budgeting Tips</h2>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/sVKQn2I4HDM" title="Budgeting Tips" frameborder="0" allowfullscreen></iframe>
-        </section>
-
-    </main>
+    </div>
 
 </body>
 </html>
