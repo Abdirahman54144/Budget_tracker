@@ -1,11 +1,13 @@
-# SpendWise Dashboard Shell
+# SpendWise - JavaScript Foundation
 
-A responsive dashboard user interface built for the SpendWise application using modern CSS techniques.
+This repository contains the JavaScript foundation logic for the SpendWise application.
 
-## Features Implemented
-- CSS Grid: Applied to build the multi-column overall page structure and dashboard card layouts.
-- Flexbox: Utilized for positioning internal elements within the header, sidebar, and dashboard cards.
-- CSS Custom Properties (`:root`): Configured brand colors, background themes, and typography colors centrally.
-- Responsive Layout: Automatically switches to a single-column view on screens smaller than 768px.
-- Micro-interactions: Applied subtle 200ms transform and shadow animations on card hover and keyboard focus states.
-- Dark Mode Support: Included automatic theme switching based on system preferences (`prefers-color-scheme: dark`).
+## Overview
+The project transforms the SpendWise interface from a static layout into an interactive application capable of gathering user budgeting data, executing financial calculations, and displaying formatted summary metrics[cite: 27, 28, 29].
+
+## JavaScript Concepts Implemented
+- **Variables & Data Types:** Used `let` and `const` variables storing string inputs and floating-point numbers[cite: 28].
+- **User Input Collection:** Prompts users via browser `prompt()` dialogs and parses values using `parseFloat()`[cite: 28].
+- **Budget Calculations:** Computes net remaining balance (`budget - expenses`) and savings percentage[cite: 28, 29].
+- **Reusable Functions:** Created modular functions (`calculateRemainingBalance`, `calculateSavingsPercentage`, `runSpendWiseTracker`) to maintain clean execution logic[cite: 29].
+- **Console Output:** Formatted summary output displayed using structured `console.log()` statements[cite: 29].
