@@ -1,13 +1,14 @@
-# SpendWise - JavaScript Foundation
+# SpendWise - Interactive Budget Tracker
 
-This repository contains the JavaScript foundation logic for the SpendWise application.
+This repository contains the interactive version of the SpendWise budget tracking application developed for Week 6[cite: 26, 27, 28].
 
-## Overview
-The project transforms the SpendWise interface from a static layout into an interactive application capable of gathering user budgeting data, executing financial calculations, and displaying formatted summary metrics[cite: 27, 28, 29].
+## Enhancements Implemented
+- **Decision Making (Conditionals):** Implemented logic to check budget limits and alert users with dynamic status colors (Danger, Warning, Success)[cite: 28, 29].
+- **Multiple Records (Arrays):** Stored expense objects containing titles and numeric amounts inside an array[cite: 28, 29].
+- **Data Processing (Loops):** Used `for` loops and `forEach` methods to process expense objects, calculate running totals, and build list DOM nodes dynamically[cite: 28, 29].
+- **DOM Manipulation:** Dynamically updated budget, expense, and balance display cards without reloading the page[cite: 28, 29].
+- **User Interactions (Event Listeners):** Handled form submit events for updating total budget and inserting new expense items[cite: 28, 29].
 
-## JavaScript Concepts Implemented
-- **Variables & Data Types:** Used `let` and `const` variables storing string inputs and floating-point numbers[cite: 28].
-- **User Input Collection:** Prompts users via browser `prompt()` dialogs and parses values using `parseFloat()`[cite: 28].
-- **Budget Calculations:** Computes net remaining balance (`budget - expenses`) and savings percentage[cite: 28, 29].
-- **Reusable Functions:** Created modular functions (`calculateRemainingBalance`, `calculateSavingsPercentage`, `runSpendWiseTracker`) to maintain clean execution logic[cite: 29].
-- **Console Output:** Formatted summary output displayed using structured `console.log()` statements[cite: 29].
+## How to Run
+1. Clone or download this repository[cite: 27].
+2. Open `index.html` in any web browser[cite: 26].

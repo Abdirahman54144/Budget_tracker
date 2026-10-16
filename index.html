@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpendWise - JavaScript Foundation</title>
+    <title>SpendWise - Interactive Budget Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,24 +26,77 @@
         <div class="main-content">
             <!-- Header -->
             <header class="header">
-                <h1>SpendWise Budget Tracker</h1>
+                <h1>SpendWise Interactive Dashboard</h1>
                 <div class="user-profile">
                     <span>Abdirahman</span>
                     <div class="avatar">A</div>
                 </div>
             </header>
 
-            <!-- Main Content Overview -->
-            <main class="cards-grid">
-                <div class="card">
-                    <h3>JavaScript Foundation Loaded</h3>
-                    <p>Open your browser console (F12 -> Console) to interact with the budget calculation prompts.</p>
+            <!-- Dashboard Content -->
+            <main class="content-body">
+                
+                <!-- Budget Overview Cards (DOM Updates) -->
+                <section class="overview-cards">
+                    <div class="card">
+                        <h3>Total Budget</h3>
+                        <p id="displayBudget">$0.00</p>
+                    </div>
+                    <div class="card">
+                        <h3>Total Expenses</h3>
+                        <p id="displayExpenses">$0.00</p>
+                    </div>
+                    <div class="card">
+                        <h3>Remaining Balance</h3>
+                        <p id="displayBalance">$0.00</p>
+                    </div>
+                </section>
+
+                <!-- Status Feedback Alert -->
+                <div id="statusMessage" class="status-alert info">
+                    Enter your budget and add expenses to track your spending!
                 </div>
+
+                <!-- Forms Section (Event Listeners) -->
+                <section class="form-section">
+                    <!-- Set Budget Form -->
+                    <form id="budgetForm" class="form-card">
+                        <h3>Set Monthly Budget</h3>
+                        <div class="input-group">
+                            <label for="monthlyBudget">Total Budget ($)</label>
+                            <input type="number" id="monthlyBudget" placeholder="e.g. 1000" min="0" step="0.01" required>
+                        </div>
+                        <button type="submit" class="btn">Update Budget</button>
+                    </form>
+
+                    <!-- Add Expense Form -->
+                    <form id="expenseForm" class="form-card">
+                        <h3>Add New Expense</h3>
+                        <div class="input-group">
+                            <label for="expenseTitle">Expense Title</label>
+                            <input type="text" id="expenseTitle" placeholder="e.g. Groceries" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="expenseAmount">Amount ($)</label>
+                            <input type="number" id="expenseAmount" placeholder="e.g. 150" min="0" step="0.01" required>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Add Expense</button>
+                    </form>
+                </section>
+
+                <!-- Expense List Section (Array Processing with Loops) -->
+                <section class="expense-list-section">
+                    <h3>Recent Expenses</h3>
+                    <ul id="expenseList" class="expense-list">
+                        <!-- Dynamic content loaded via JS -->
+                    </ul>
+                </section>
+
             </main>
         </div>
     </div>
 
-    <!-- 1. Link JavaScript File -->
+    <!-- JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>
